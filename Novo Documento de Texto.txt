@@ -1,0 +1,14 @@
+sistema-vendas/
+│── backend/
+│   ├── database.js      # Conexão e criação das tabelas
+│   ├── server.js        # Configuração do servidor e rotas (API)
+│── frontend/
+│   ├── index.html       # Tela Inicial (Dashboard ou Vendas)
+│   ├── clientes.html    # Cadastro de Clientes
+│   ├── produtos.html    # Cadastro de Produtos
+│   ├── script.js        # Lógica de comunicação com a API
+│   ├── style.css        # Estilização geral
+│── package.json         # Dependências do Node.js
+
+
+node backend/server.js

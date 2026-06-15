@@ -1,0 +1,25 @@
+CREATE DATABASE sistema_vendas;
+
+USE sistema_vendas;
+
+CREATE TABLE clientes (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(100) NOT NULL,
+    telefone VARCHAR(20),
+    email VARCHAR(100)
+);
+
+CREATE TABLE produtos (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(100) NOT NULL,
+    preco DECIMAL(10,2) NOT NULL
+);
+
+CREATE TABLE vendas (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    cliente VARCHAR(100),
+    produto VARCHAR(100),
+    quantidade INT
+);
+
+SELECT * FROM clientes;
