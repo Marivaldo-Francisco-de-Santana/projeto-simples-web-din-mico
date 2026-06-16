@@ -5,7 +5,7 @@ body {
 }
 
 header {
-    background: #2e8b57;
+    background: #000;
     color: white;
     padding: 15px;
 }
@@ -40,7 +40,7 @@ input {
 }
 
 button {
-    background: #2e8b57;
+    background: #000;
     color: white;
     border: none;
     padding: 10px 15px;
@@ -48,7 +48,7 @@ button {
 }
 
 button:hover {
-    background: #246b45;
+    background: #000;
 }
 
 table {
@@ -62,7 +62,7 @@ table, th, td {
 }
 
 th {
-    background: #2e8b57;
+    background: #000;
     color: white;
 }
 
