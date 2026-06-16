@@ -9,7 +9,6 @@
 
 <header>
     <h1>Sistema de Vendas</h1>
-
     <nav>
         <a href="/clientes">Clientes</a>
         <a href="/produtos">Produtos</a>
@@ -18,42 +17,16 @@
 </header>
 
 <div class="container">
-
     <h2>Registrar Venda</h2>
-
     <form action="/vendas" method="POST">
-
-        <input
-            type="text"
-            name="cliente"
-            placeholder="Cliente"
-            required
-        >
-
-        <input
-            type="text"
-            name="produto"
-            placeholder="Produto"
-            required
-        >
-
-        <input
-            type="number"
-            name="quantidade"
-            placeholder="Quantidade"
-            required
-        >
-
-        <button type="submit">
-            Registrar Venda
-        </button>
-
+        <input type="text" name="cliente" placeholder="Cliente" required>
+        <input type="text" name="produto" placeholder="Produto" required>
+        <input type="number" name="quantidade" placeholder="Quantidade" required>
+        <button type="submit">Registrar Venda</button>
     </form>
 
     <h2>Vendas Registradas</h2>
-
     <table>
-
         <tr>
             <th>ID</th>
             <th>Cliente</th>
@@ -61,29 +34,25 @@
             <th>Quantidade</th>
             <th>Ações</th>
         </tr>
-
         <% vendas.forEach(venda => { %>
-
         <tr>
-
             <td><%= venda.id %></td>
             <td><%= venda.cliente %></td>
             <td><%= venda.produto %></td>
             <td><%= venda.quantidade %></td>
-
             <td>
                 <a href="/vendas/excluir/<%= venda.id %>">
                     <button>Excluir</button>
                 </a>
             </td>
-
         </tr>
-
         <% }) %>
-
     </table>
-
 </div>
+
+<footer style="background-color: #333; color: white; text-align: center; padding: 1px; position: fixed; bottom: 0; left: 0; width: 100%;">
+  <p>&copy; Sistema de Vendas - Todos os direitos reservados</p>
+</footer>
 
 </body>
 </html>
