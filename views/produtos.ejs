@@ -1,86 +1,33 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <title>Produtos</title>
-    <link rel="stylesheet" href="/style.css">
-</head>
-<body>
-
-<header>
-    <h1>Sistema de Vendas</h1>
-
-    <nav>
-        <a href="/clientes">Clientes</a>
-        <a href="/produtos">Produtos</a>
-        <a href="/vendas">Vendas</a>
-    </nav>
-</header>
+<%- include('partials/header') %>
 
 <div class="container">
-
     <h2>Cadastro de Produtos</h2>
-
     <form action="/produtos" method="POST">
-
-        <input
-            type="text"
-            name="nome"
-            placeholder="Nome do Produto"
-            required
-        >
-
-        <input
-            type="number"
-            step="0.01"
-            name="preco"
-            placeholder="Preço"
-            required
-        >
-
-        <button type="submit">
-            Cadastrar
-        </button>
-
+        <input type="text" name="nome" placeholder="Nome do Produto" required>
+        <input type="number" step="0.01" name="preco" placeholder="Preço" required>
+        <button type="submit">Cadastrar</button>
     </form>
 
     <h2>Produtos Cadastrados</h2>
-
     <table>
-
         <tr>
             <th>ID</th>
             <th>Produto</th>
             <th>Preço</th>
             <th>Ações</th>
         </tr>
-
         <% produtos.forEach(produto => { %>
-
         <tr>
-
             <td><%= produto.id %></td>
             <td><%= produto.nome %></td>
             <td>R$ <%= produto.preco %></td>
-
             <td>
-                <a href="/produtos/excluir/<%= produto.id %>">
-                    <button>Excluir</button>
-                </a>
+                <a href="/produtos/excluir/<%= produto.id %>"><button>Excluir</button></a>
             </td>
-
         </tr>
-
         <% }) %>
-
     </table>
-
 </div>
 
-<!-- O rodapé agora está posicionado corretamente antes do fechamento do body -->
-<footer style="background-color: #333; color: white; text-align: center; padding: 1px; position: fixed; bottom: 0; left: 0; width: 100%;">
-  <p>&copy; 2026 Sistema de Vendas - Todos os direitos reservados</p>
-</footer>
+<%- include('partials/footer') %>
 
-</body>
-</html>

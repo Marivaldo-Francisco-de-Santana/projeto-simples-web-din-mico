@@ -1,20 +1,4 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <title>Vendas</title>
-    <link rel="stylesheet" href="/style.css">
-</head>
-<body>
-
-<header>
-    <h1>Sistema de Vendas</h1>
-    <nav>
-        <a href="/clientes">Clientes</a>
-        <a href="/produtos">Produtos</a>
-        <a href="/vendas">Vendas</a>
-    </nav>
-</header>
+<%- include('partials/header') %>
 
 <div class="container">
     <h2>Registrar Venda</h2>
@@ -41,18 +25,12 @@
             <td><%= venda.produto %></td>
             <td><%= venda.quantidade %></td>
             <td>
-                <a href="/vendas/excluir/<%= venda.id %>">
-                    <button>Excluir</button>
-                </a>
+                <a href="/vendas/excluir/<%= venda.id %>"><button>Excluir</button></a>
             </td>
         </tr>
         <% }) %>
     </table>
 </div>
 
-<footer style="background-color: #333; color: white; text-align: center; padding: 1px; position: fixed; bottom: 0; left: 0; width: 100%;">
-  <p>&copy; Sistema de Vendas - Todos os direitos reservados</p>
-</footer>
+<%- include('partials/footer') %>
 
-</body>
-</html>

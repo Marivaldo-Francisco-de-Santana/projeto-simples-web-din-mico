@@ -1,55 +1,15 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <title>Clientes</title>
-    <link rel="stylesheet" href="/style.css">
-</head>
-<body>
-
-<header>
-    <h1>Sistema de Vendas</h1>
-
-    <nav>
-        <a href="/clientes">Clientes</a>
-        <a href="/produtos">Produtos</a>
-        <a href="/vendas">Vendas</a>
-    </nav>
-</header>
+<%- include('partials/header') %>
 
 <div class="container">
-
     <h2>Cadastro de Clientes</h2>
-
     <form action="/clientes" method="POST">
-
-        <input
-            type="text"
-            name="nome"
-            placeholder="Nome"
-            required
-        >
-
-        <input
-            type="text"
-            name="telefone"
-            placeholder="Telefone"
-        >
-
-        <input
-            type="email"
-            name="email"
-            placeholder="E-mail"
-        >
-
-        <button type="submit">
-            Cadastrar
-        </button>
-
+        <input type="text" name="nome" placeholder="Nome" required>
+        <input type="text" name="telefone" placeholder="Telefone">
+        <input type="email" name="email" placeholder="E-mail">
+        <button type="submit">Cadastrar</button>
     </form>
 
     <h2>Clientes Cadastrados</h2>
-
     <table>
         <tr>
             <th>ID</th>
@@ -58,30 +18,19 @@
             <th>Email</th>
             <th>Ações</th>
         </tr>
-
         <% clientes.forEach(cliente => { %>
         <tr>
             <td><%= cliente.id %></td>
             <td><%= cliente.nome %></td>
             <td><%= cliente.telefone %></td>
             <td><%= cliente.email %></td>
-
             <td>
-                <a href="/clientes/excluir/<%= cliente.id %>">
-                    <button>Excluir</button>
-                </a>
+                <a href="/clientes/excluir/<%= cliente.id %>"><button>Excluir</button></a>
             </td>
         </tr>
         <% }) %>
-
     </table>
-
 </div>
 
-<!-- O rodapé foi movido para dentro do body e recebeu o ajuste left: 0 -->
-<footer style="background-color: #333; color: white; text-align: center; padding: 1px; position: fixed; bottom: 0; left: 0; width: 100%;">
-  <p>&copy; 2026 Sistema de Vendas - Todos os direitos reservados</p>
-</footer>
+<%- include('partials/footer') %>
 
-</body>
-</html>

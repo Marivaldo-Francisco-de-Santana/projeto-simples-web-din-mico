@@ -2,71 +2,124 @@ body {
     font-family: Arial, sans-serif;
     background: #f4f4f4;
     margin: 0;
+    /* EVITA QUE O RODAPÉ CUBRA AS TABELAS: cria espaço no fim da página */
+    padding-bottom: 70px;
+    box-sizing: border-box;
+    min-height: 100vh;
 }
 
 header {
-    background: #000;
+    background: #111; /* Preto ligeiramente mais suave */
     color: white;
-    padding: 15px;
+    padding: 15px 5%; /* Alinha o texto com as laterais do container */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 header h1 {
     margin: 0;
+    font-size: 1.5rem;
 }
 
 nav {
-    margin-top: 10px;
+    margin-top: 0; /* Zerado pois o flexbox já alinha verticalmente */
 }
 
 nav a {
     color: white;
     text-decoration: none;
-    margin-right: 15px;
+    margin-left: 20px; /* Espaçamento invertido para alinhar à direita */
     font-weight: bold;
+    transition: color 0.2s ease;
+}
+
+nav a:hover {
+    color: #00bcd4; /* Efeito visual ao passar o mouse no menu */
 }
 
 .container {
     width: 90%;
-    margin: 20px auto;
+    max-width: 1200px; /* Evita que o site estique demais em telas grandes */
+    margin: 30px auto;
     background: white;
-    padding: 20px;
-    border-radius: 10px;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05); /* Sombra suave para profundidade */
 }
 
+/* Melhoria nos inputs do formulário */
 input {
     width: 100%;
     padding: 10px;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; /* Garante que o padding não quebre a largura */
+}
+
+input:focus {
+    border-color: #111;
+    outline: none;
 }
 
 button {
-    background: #000;
+    background: #111;
     color: white;
     border: none;
-    padding: 10px 15px;
+    padding: 10px 20px;
+    border-radius: 4px;
     cursor: pointer;
+    font-weight: bold;
+    transition: background 0.2s ease;
 }
 
 button:hover {
-    background: #000;
+    background: #333; /* Cor muda ao passar o mouse para dar feedback */
 }
 
+/* Estilização moderna para tabelas (estilo zebrada) */
 table {
     width: 100%;
     border-collapse: collapse;
     margin-top: 20px;
 }
 
+/* Removeu as bordas verticais pesadas, deixando apenas linhas horizontais */
 table, th, td {
-    border: 1px solid #ccc;
+    border: none;
+}
+
+tr {
+    border-bottom: 1px solid #eee;
+}
+
+/* Alterna as cores das linhas para facilitar a leitura */
+tr:nth-child(even) {
+    background-color: #f9f9f9;
 }
 
 th {
-    background: #000;
+    background: #111;
     color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 0.5px;
 }
 
 th, td {
-    padding: 10px;
+    padding: 12px 15px;
     text-align: left;
+}
+
+/* Customização para o botão de excluir dentro da tabela */
+td button {
+    background: #dc3545; /* Vermelho padrão para exclusão */
+    padding: 5px 10px;
+    font-size: 0.85rem;
+}
+
+td button:hover {
+    background: #bd2130;
 }
